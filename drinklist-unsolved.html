@@ -14,9 +14,13 @@
   <hr>
 
   <!-- Here we create a generic drink-options div -->
+  <h3>Vanilla JS w/ for loop</h3>
   <div id="drink-options"></div>
+  <h3>Vanilla JS w/ for each loop</h3>
+  <div id="drinksForEach"></div>
+  <h3>jQuery w/ for each loop</h3>
   <div id="jqueryDrinks"></div>
-  <div id="jqueryDrinksForEach"></div>
+
   <script type="text/javascript">
 
     // Array holds all of the drinks available
@@ -48,8 +52,22 @@
       drinkListDisplay.appendChild(newDiv);
     }
 
-    // Using jQuery
 
+    // Using for each loop
+    let drinksForEach = document.getElementById("drinksForEach")
+
+    drinkList.forEach(element => {
+      let newDiv = document.createElement("div");
+      newDiv.textContent = element;
+      drinksForEach.appendChild(newDiv);
+    });
+
+    // Using jQuery
+    let jQueryDrinks = $("#jqueryDrinks");
+
+    drinkList.forEach(e => {
+      jQueryDrinks.append(e, "<br />")
+    })
   </script>
 
 </body>
